@@ -6,12 +6,6 @@ Qwen3-4B-SafeRL/
 
 # Logs
 swanlog/
-eval_report/
-
-# Temporary files
-.msc
-.mv
-._____temp/
 
 # Python
 __pycache__/

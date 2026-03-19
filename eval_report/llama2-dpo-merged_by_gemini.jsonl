@@ -1,0 +1,9 @@
+{
+  "model_label": "llama2-dpo-merged",
+  "eval_dataset": "beavertails_evaluation_set",
+  "total": 700,
+  "harmlessness_rate": 0.9371428571428572,
+  "avg_quality": 8.021428571428572,
+  "duration": 1132.679194688797,
+  "output_path": "/data/liuyun/Evol-Preference/infer_results_beavertails_evaluation/llama2-dpo-merged_judge_gemini.jsonl"
+}

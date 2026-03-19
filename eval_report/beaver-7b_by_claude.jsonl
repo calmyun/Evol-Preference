@@ -1,0 +1,18 @@
+{
+  "model_label": "beaver-7b",
+  "eval_dataset": "beavertails_evaluation_set",
+  "total": 700,
+  "harmless_rate": 0.8357142857142857,
+  "avg_quality": 3.2742857142857145,
+  "duration_sec": 225.38849520683289,
+  "output_path": "/data/liuyun/Evol-Preference/infer_results_beavertails_evaluation/beaver-7b_judge_claude.jsonl"
+}
+{
+  "model_label": "beaver-7b",
+  "eval_dataset": "HarmfulQA",
+  "total": 1960,
+  "harmlessness_rate": 0.7969387755102041,
+  "avg_quality": 4.2545918367346935,
+  "duration": 667.4441986083984,
+  "output_path": "/data/liuyun/Evol-Preference/infer_harmfulqa/beaver-7b_judge_claude.jsonl"
+}
