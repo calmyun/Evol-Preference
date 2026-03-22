@@ -1,0 +1,9 @@
+{
+  "model_label": "Beaver-7b",
+  "eval_dataset": "HarmfulQA",
+  "total": 1960,
+  "harmlessness_rate": 0.8612244897959184,
+  "avg_quality": 5.306632653061224,
+  "duration": 2982.1619851589203,
+  "output_path": "/root/autodl-tmp/Evol-Preference/infer_harmfulqa/beaver-7b_judge_gemini.jsonl"
+}

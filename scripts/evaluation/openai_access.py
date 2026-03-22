@@ -7,7 +7,7 @@ import asyncio
 aplai_api_key = "sk-5EGVAxfuWBBlBJdwFZzO7N7O30YiMDzXkMljcmMRmiwrDG5q"
 async_client = AsyncOpenAI(api_key=aplai_api_key, base_url="https://api.ablai.top/v1")
 client = OpenAI(api_key=aplai_api_key, base_url="https://api.ablai.top/v1")
-model_name = "gpt-5-nano-2025-08-07"
+model_name = "gpt-3.5-turbo-0125"
 # model_name = "deepseek-v3-2-exp"
 def get_oai_completion(prompt,developer):
     try:
@@ -27,6 +27,7 @@ def get_oai_completion(prompt,developer):
             top_p=0.95,
             frequency_penalty=0,
             presence_penalty=0,
+            temperature=0.1,
             stop=None)
         gpt_output = response.choices[0].message.content
         return gpt_output
@@ -58,6 +59,7 @@ async def get_oai_completion_async(prompt, developer):
             top_p=0.95,
             frequency_penalty=0,
             presence_penalty=0,
+            temperature=0.1,
             stop=None)
         gpt_output = response.choices[0].message.content
         return gpt_output
@@ -84,10 +86,10 @@ async def get_oai_completion_async(prompt, developer):
         print(f"[未知错误] 发生未知错误: {e}")
         raise
 
-def call_chatgpt(prompt,developer="", max_retries=5):
+def get_completion(prompt,system="", max_retries=5):
     for attempt in range(max_retries):
         try:
-            ans = get_oai_completion(prompt,developer).strip()
+            ans = get_oai_completion(prompt,system).strip()
             
             # ans非空则请求成功
             if not ans:
@@ -106,11 +108,11 @@ def call_chatgpt(prompt,developer="", max_retries=5):
             time.sleep(wait)
     return ""
 
-async def call_chatgpt_async(prompt, developer="", max_retries=5):
+async def get_completion_async(prompt, system="", max_retries=5):
     """异步版本的ChatGPT调用函数，包含重试机制"""
     for attempt in range(max_retries):
         try:
-            ans = (await get_oai_completion_async(prompt, developer)).strip()
+            ans = (await get_oai_completion_async(prompt, system)).strip()
             
             # ans非空则请求成功
             if not ans:
