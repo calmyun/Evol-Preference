@@ -154,7 +154,7 @@ if __name__ == "__main__":
     with open(DATASET_PATH, "r", encoding="utf-8") as f:
         test_data = [json.loads(line) for line in f]
 
-    # with open(OUTPUT_PATH, "w", encoding="utf-8") as wf:
+    # with open(OUTPUT_PATH, "w", encoding="utf-8") as wf:+
     with open(OUTPUT_PATH, "a+", encoding="utf-8") as wf:
         for i in tqdm(range(0, len(test_data), BATCH_SIZE)):
             batch = test_data[i:i + BATCH_SIZE]

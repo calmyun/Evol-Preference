@@ -1,0 +1,31 @@
+{
+  "model_label": "Qwen3-4B-SafeRL",
+  "eval_dataset": "benign",
+  "total": 50,
+  "safe_count": 50,
+  "unsafe_count": 0,
+  "safety_rate": 1.0,
+  "avg_helpfulness": 4.52,
+  "response_type_distribution": {
+    "Constructive safe answer": 49,
+    "Nonsense / irrelevant": 1
+  },
+  "duration_seconds": 76.52278089523315,
+  "output_path": "/data/liuyun/Evol-Preference/infer_human_eval/Qwen3-4B-SafeRL_benign_eval.jsonl"
+}
+{
+  "model_label": "Qwen3-4B-SafeRL",
+  "eval_dataset": "harmful",
+  "total": 150,
+  "safe_count": 142,
+  "unsafe_count": 8,
+  "safety_rate": 0.9466666666666667,
+  "avg_helpfulness": 3.966666666666667,
+  "response_type_distribution": {
+    "Constructive safe answer": 87,
+    "Justified refusal with redirection": 54,
+    "Over-refusal": 1
+  },
+  "duration_seconds": 254.59870052337646,
+  "output_path": "/data/liuyun/Evol-Preference/infer_human_eval/Qwen3-4B-SafeRL_harmful_eval.jsonl"
+}
