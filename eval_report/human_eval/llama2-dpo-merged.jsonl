@@ -1,5 +1,5 @@
 {
-    "model_label": "llama2-dpo-merged",
+    "model_label": "Llama2 + Evol-Preference(ours)",
     "eval_dataset": "harmful",
     "total": 150,
     "safe_count": 134,
@@ -14,7 +14,7 @@
     }
 }
 {
-    "model_label": "llama2-dpo-merged",
+    "model_label": "Llama2 + Evol-Preference(ours)",
     "eval_dataset": "benign",
     "total": 50,
     "safe_count": 50,

@@ -1,5 +1,5 @@
 {
-  "model_label": "Qwen3-4B-SafeRL",
+  "model_label": "Qwen3-SafeRL",
   "eval_dataset": "benign",
   "total": 50,
   "safe_count": 50,
@@ -9,12 +9,10 @@
   "response_type_distribution": {
     "Constructive safe answer": 49,
     "Nonsense / irrelevant": 1
-  },
-  "duration_seconds": 76.52278089523315,
-  "output_path": "/data/liuyun/Evol-Preference/infer_human_eval/Qwen3-4B-SafeRL_benign_eval.jsonl"
+  }
 }
 {
-  "model_label": "Qwen3-4B-SafeRL",
+  "model_label": "Qwen3-SafeRL",
   "eval_dataset": "harmful",
   "total": 150,
   "safe_count": 142,
@@ -25,7 +23,5 @@
     "Constructive safe answer": 87,
     "Justified refusal with redirection": 54,
     "Over-refusal": 1
-  },
-  "duration_seconds": 254.59870052337646,
-  "output_path": "/data/liuyun/Evol-Preference/infer_human_eval/Qwen3-4B-SafeRL_harmful_eval.jsonl"
+  }
 }
