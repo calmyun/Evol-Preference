@@ -46,3 +46,7 @@ Thumbs.db
 
 # test script
 test.sh
+
+# Cache directories
+unsloth_compiled_cache/
+scripts/unsloth_compiled_cache/
