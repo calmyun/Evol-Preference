@@ -28,7 +28,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-*.unsloth_compiled_cache/
+*.unsloth_compiled_cache
 
 # Jupyter Notebook
 .ipynb_checkpoints
