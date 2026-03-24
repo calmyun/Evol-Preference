@@ -2,11 +2,19 @@ from unsloth import FastLanguageModel
 from trl import SFTTrainer,SFTConfig
 from datasets import load_dataset
 import torch
+import argparse
+
+argparser = argparse.ArgumentParser("sft")
+argparser.add_argument("--data_path", type=str, required=True)
+argparser.add_argument("--output_path", type=str, required=True)
+args = argparser.parse_args()
+
 
 # 1. 参数配置
 model_name = "/data/liuyun/model/llama-2-7b"
-data_path = "/data/liuyun/Evol-Preference/data/beavertails_evol_data_split_70%.jsonl"
-output_dir = "/data/liuyun/Evol-Preference/train-unsloth"
+# data_path = "/data/liuyun/Evol-Preference/data/beavertails_evol_data_split_70%.jsonl"
+data_path = args.data_path
+output_dir = args.output_path
 
 max_length = 512
 batch_size = 32
@@ -20,7 +28,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     model_name = model_name,
     load_in_4bit = False,   # 单卡80G，可以直接fp16/bf16跑
     dtype = torch.bfloat16,
-    max_seq_length = max_length,
+    max_seq_length = max_length
 )
 
 # Lora配置

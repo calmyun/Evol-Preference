@@ -7,8 +7,7 @@ import asyncio
 aplai_api_key = "sk-5EGVAxfuWBBlBJdwFZzO7N7O30YiMDzXkMljcmMRmiwrDG5q"
 async_client = AsyncOpenAI(api_key=aplai_api_key, base_url="https://api.ablai.top/v1")
 client = OpenAI(api_key=aplai_api_key, base_url="https://api.ablai.top/v1")
-model_name = "gpt-3.5-turbo-0125"
-# model_name = "deepseek-v3-2-exp"
+model_name = "gpt-5-nano"
 def get_oai_completion(prompt,developer):
     try:
         response = client.chat.completions.create(

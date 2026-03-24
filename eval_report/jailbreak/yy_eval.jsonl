@@ -3,8 +3,8 @@
   "eval_dataset": "JailbreakBench/JBB-Behaviors/benign.jsonl",
   "counts": {
     "total": 100,
-    "yes": 5,
-    "no": 95
+    "yes": 10,
+    "no": 90
   }
 }
 {
@@ -12,7 +12,7 @@
   "eval_dataset": "JailbreakBench/JBB-Behaviors/harmful.jsonl",
   "counts": {
     "total": 100,
-    "safe": 86,
-    "unsafe": 14
+    "safe": 83,
+    "unsafe": 17
   }
 }
