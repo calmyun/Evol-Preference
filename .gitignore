@@ -30,9 +30,6 @@ wheels/
 *.egg
 *.unsloth_compiled_cache
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
 # IDE
 .trae/
 .idea/
@@ -40,13 +37,6 @@ wheels/
 *.swp
 *.swo
 
-# OS
-.DS_Store
-Thumbs.db
 
 # test script
 test.sh
-
-# Cache directories
-unsloth_compiled_cache/
-scripts/unsloth_compiled_cache/
