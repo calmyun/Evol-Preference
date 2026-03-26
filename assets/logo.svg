@@ -1,0 +1,73 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景渐变 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ecca3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38a169;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dnaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="400" height="400" rx="60" fill="url(#bgGradient)"/>
+  
+  <!-- 安全盾牌轮廓 -->
+  <path d="M200 60 L320 120 L320 220 C320 300 260 350 200 370 C140 350 80 300 80 220 L80 120 Z" 
+        fill="url(#shieldGradient)" 
+        opacity="0.95"/>
+  
+  <!-- 盾牌内层 -->
+  <path d="M200 90 L295 138 L295 220 C295 285 255 325 200 345 C145 325 105 285 105 220 L105 138 Z" 
+        fill="#1a1a2e" 
+        opacity="0.3"/>
+  
+  <!-- DNA 双螺旋结构 (表示进化) -->
+  <g transform="translate(200, 210)">
+    <!-- 左侧螺旋 -->
+    <path d="M-40 -60 C-60 -30 -20 0 -40 30 C-60 60 -20 90 -40 120" 
+          stroke="url(#dnaGradient)" 
+          stroke-width="6" 
+          fill="none"
+          stroke-linecap="round"/>
+    
+    <!-- 右侧螺旋 -->
+    <path d="M40 -60 C60 -30 20 0 40 30 C60 60 20 90 40 120" 
+          stroke="url(#dnaGradient)" 
+          stroke-width="6" 
+          fill="none"
+          stroke-linecap="round"/>
+    
+    <!-- 连接横杠 -->
+    <line x1="-35" y1="-45" x2="35" y2="-45" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+    <line x1="-45" y1="-15" x2="45" y2="-15" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+    <line x1="-35" y1="15" x2="35" y2="15" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+    <line x1="-45" y1="45" x2="45" y2="45" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+    <line x1="-35" y1="75" x2="35" y2="75" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+    <line x1="-45" y1="105" x2="45" y2="105" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+    
+    <!-- 中心节点 -->
+    <circle cx="0" cy="0" r="15" fill="#4ecca3" opacity="0.8"/>
+  </g>
+  
+  <!-- 顶部徽章装饰 -->
+  <circle cx="200" cy="150" r="25" fill="#4ecca3" opacity="0.3"/>
+  <path d="M200 135 L200 165 M185 150 L215 150" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- 底部文字区域 -->
+  <text x="200" y="395" 
+        font-family="Arial, sans-serif" 
+        font-size="14" 
+        font-weight="bold"
+        fill="#4ecca3" 
+        text-anchor="middle"
+        letter-spacing="2">
+    EVOL-PREFERENCE
+  </text>
+</svg>
