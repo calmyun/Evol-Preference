@@ -4,6 +4,7 @@ import json
 import re
 import os
 from transformers import AutoModelForCausalLM, AutoTokenizer
+from peft import AutoPeftModelForCausalLM
 from tqdm import tqdm
 
 
@@ -52,11 +53,26 @@ def load_model_and_tokenizer():
         trust_remote_code=True,
         padding_side="left"
     )
-    model = AutoModelForCausalLM.from_pretrained(
-        MODEL_PATH,
-        torch_dtype="auto",
-        device_map=f"cuda:{DEVICE}",
-    )
+    
+    # 检测是否为 LoRA 模型（检查 adapter_config.json）
+    adapter_config_path = os.path.join(MODEL_PATH, "adapter_config.json")
+    if os.path.exists(adapter_config_path):
+        # LoRA 模型，使用 AutoPeftModelForCausalLM 加载
+        model = AutoPeftModelForCausalLM.from_pretrained(
+            MODEL_PATH,
+            torch_dtype="auto",
+            device_map=f"cuda:{DEVICE}",
+        )
+        # 合并 LoRA 权重以便正常推理
+        model = model.merge_and_unload()
+    else:
+        # 完整模型，使用 AutoModelForCausalLM 加载
+        model = AutoModelForCausalLM.from_pretrained(
+            MODEL_PATH,
+            torch_dtype="auto",
+            device_map=f"cuda:{DEVICE}",
+        )
+    
     model.eval()
     return model, tokenizer
 
