@@ -1,7 +1,7 @@
 # Evol-Preference: 基于进化偏好的大语言模型安全对齐
 
 <div align="center">
-  <img src="assets/Evol-Preference.png" alt="Evol-Preference Logo"/>
+  <img src="assets/Evol-Preference logo.png" alt="Evol-Preference Logo"/>
 </div>
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
