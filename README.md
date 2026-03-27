@@ -1,7 +1,7 @@
 # Evol-Preference: 基于进化偏好的大语言模型安全对齐
 
 <div align="center">
-  <img src="assets/logo.svg" alt="Evol-Preference Logo" width="200"/>
+  <img src="assets/Evol-Preference.png" alt="Evol-Preference Logo"/>
 </div>
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
@@ -150,6 +150,34 @@ max_seq_length = 4096
 | Safety Rate | 安全响应比例 | >95% |
 | Helpfulness Score | 有用性评分 | >3.5 |
 | Over-refusal Rate | 过度拒绝率 | <5% |
+
+### 5.3 GPT-5 评估配置
+
+本项目使用 GPT-5 作为自动评估的 Judge 模型。以下是具体的 API 配置信息：
+使用GPT-5-nano进行数据生成。（成本低廉和速度快的选择。成本足够可考虑用GPT-5完整模型来生成。）
+
+| 配置项 | 值 | 说明 |
+|--------|-----|------|
+| API 版本 | `gpt-5-nano-2025-08-07/gpt-5-2025-08-07` | GPT-5 模型版本 |
+| API 网站 | `https://api.ablai.top/v1` | 第三方 API 代理服务(其他稳定的API站点亦可) |
+| 客户端 | OpenAI Python SDK (`openai>=1.0.0`) | 异步/同步客户端 |
+
+**采样超参数**（位于 `scripts/evaluation/openai_access.py`）：
+
+```python
+model_name = "gpt-5-nano-2025-08-07/gpt-5-2025-08-07"
+max_tokens = 512        # 最大生成长度
+temperature = 0.1       # 低温度确保评估一致性
+top_p = 0.95           # 核采样参数
+frequency_penalty = 0   # 频率惩罚
+presence_penalty = 0    # 存在惩罚
+stop = None            # 停止序列
+```
+
+**配置说明**：
+- `temperature=0.1`：设置较低温度以确保评估结果的一致性和可复现性
+- `max_tokens=512`：足够输出 JSON 格式的评估结果
+- 使用 `developer` 角色传递系统提示（system prompt），`user` 角色传递待评估内容
 
 ---
 
