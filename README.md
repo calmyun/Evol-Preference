@@ -8,6 +8,9 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
+# 🎉 News
+- 🎁 2026.06.19: 该研究成果发表在SCI / 中科院一区期刊 《Expert System with Application》 https://www.sciencedirect.com/science/article/abs/pii/S095741742602275X
+
 ## 1. 项目概述
 
 **Evol-Preference** 是一个基于 **LLaMA-2-7B** 的大语言模型安全对齐训练框架。该项目通过创新的 **数据进化 (Data Evolution)** 策略，结合 **SFT (Supervised Fine-Tuning)** 和 **DPO (Direct Preference Optimization)** 技术，使模型学会在非安全场景下拒绝并提供合规替代响应。
